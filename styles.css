@@ -6,13 +6,49 @@ body {
     padding: 0;
 }
 header {
-    background: black;
+    background-color: black;
     padding: 20px;
+    height: 100px
+}
+header a {
+    color: white;
+    text-decoration: none;
+    margin-top: 40px;
+}
+header .logo a {
+    background-image: url("images/ollie.jpg");
+    background-size: 100px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 100px;
+    position: relative;
+    text-indent: -9999999px;
+    top: -40px;
+    width: 100px;
 }
 section {
     background: white;
     color: gray;
     padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+div {
+    background: blue;
+    margin: auto;
+    width: 100px;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+li {
+    display: inline-block;
+    margin-right: 20px;
+}
+a:hover {
+    text-decoration: underline;
 }
 footer {
     background: black;
