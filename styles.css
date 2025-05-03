@@ -1,42 +1,49 @@
+:root {
+    --bg-color: white;
+    --text-color: black;
+}
+body.dark-mode {
+    --bg-color: black;
+    --text-color: white;
+}
+
 body {
-    background: rgb(58,58, 58);
-    color: white;
+    background: var(--bg-color);
+    color: var(--text-color);
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 header {
-    background-color: black;
+    background-color: var(--bg-color);
     padding: 20px;
-    height: 100px
+    height: 100px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
 }
 header a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     margin-top: 40px;
+    transition: background-color 0.3s, color 0.3s;
 }
-header .logo a {
-    background-image: url("images/ollie.jpg");
-    background-size: 100px;
-    background-repeat: no-repeat;
-    display: inline-block;
-    height: 100px;
-    position: relative;
-    text-indent: -9999999px;
-    top: -40px;
-    width: 100px;
+.title {
+    width: 100%;
 }
 section {
-    background: white;
-    color: gray;
+    background: var(--bg-color);
+    color: black;
     padding: 20px;
     display: flex;
     flex-direction: row;
+    transition: background-color 0.3s, color 0.3s;
 }
-div {
-    background: blue;
-    margin: auto;
-    width: 100px;
+abbr {
+    text-decoration: none;
+}
+abbr:hover {
+    color: gray;
 }
 ul {
     margin: 0;
@@ -51,6 +58,19 @@ a:hover {
     text-decoration: underline;
 }
 footer {
-    background: black;
+    background: var(--bg-color);
     padding: 10px 20px;
 }
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    padding: 20px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 1000;
+    transition: color 0.3s;
+  }
