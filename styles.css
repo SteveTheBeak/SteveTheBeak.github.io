@@ -1,3 +1,5 @@
+/* Theme colours */
+
 :root {
     --bg-color: rgb(242, 242, 247);
     --text-color: black;
@@ -7,6 +9,8 @@ body.dark-mode {
     --text-color: white;
 }
 
+/* Home page styling */
+
 body {
     background: var(--bg-color);
     color: var(--text-color);
@@ -15,21 +19,19 @@ body {
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
 }
+
 header {
     background-color: var(--bg-color);
     padding: 20px;
-    height: 100px;
+    height: auto;
     text-align: right;
     transition: background-color 0.3s, color 0.3s;
 }
 header a {
     color: var(--text-color);
     text-decoration: none;
-    margin-top: 40px;
+    margin-top: 80px;
     transition: background-color 0.3s, color 0.3s;
-}
-.title {
-    width: 100%;
 }
 section {
     background: var(--bg-color);
@@ -39,27 +41,14 @@ section {
     flex-direction: row;
     transition: background-color 0.3s, color 0.3s;
 }
-abbr {
-    text-decoration: none;
-}
-abbr:hover {
-    color: gray;
-}
 ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
-li {
+header li {
     display: inline-block;
     margin-right: 20px;
-}
-a:hover {
-    text-decoration: underline;
-}
-footer {
-    background: var(--bg-color);
-    padding: 10px 20px;
 }
 .theme-toggle {
     position: fixed;
@@ -74,3 +63,15 @@ footer {
     z-index: 1000;
     transition: color 0.3s;
   }
+
+/* Contact page styling */
+
+.contact-page {
+    padding-top: 0;
+    max-width: 600px;
+    margin: auto;
+}
+.contact-page h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
