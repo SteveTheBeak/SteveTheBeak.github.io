@@ -31,6 +31,7 @@ header a {
     color: var(--text-color);
     text-decoration: none;
     margin-top: 80px;
+    font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
 }
 section {
