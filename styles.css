@@ -1,9 +1,9 @@
 :root {
-    --bg-color: white;
+    --bg-color: rgb(242, 242, 247);
     --text-color: black;
 }
 body.dark-mode {
-    --bg-color: black;
+    --bg-color: rgb(18,18,18);
     --text-color: white;
 }
 
@@ -19,7 +19,7 @@ header {
     background-color: var(--bg-color);
     padding: 20px;
     height: 100px;
-    text-align: center;
+    text-align: right;
     transition: background-color 0.3s, color 0.3s;
 }
 header a {
