@@ -3,10 +3,14 @@
 :root {
     --bg-color: rgb(242, 242, 247);
     --text-color: black;
+    --text-hover-color: rgb(72, 61, 139);
+    --nav-bg-color: rgb(200,200,200);
 }
 html.dark-mode {
     --bg-color: rgb(18,18,18);
     --text-color: white;
+    --text-hover-color: rgb(100, 149, 237);
+    --nav-bg-color: rgb(40,40,40);
 }
 
 /* Home page / defualt styling */
@@ -21,10 +25,9 @@ body {
 }
 
 header {
-    background-color: var(--bg-color);
+    background-color: var(--nav-bg-color);
     padding: 20px;
     height: auto;
-    text-align: right;
     transition: background-color 0.3s, color 0.3s;
 }
 header a {
@@ -45,18 +48,31 @@ section {
 ul {
     margin: 0;
     padding: 0;
+    text-align: right;
     list-style-type: none;
 }
 header li {
     display: inline-block;
     margin-right: 20px;
 }
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-bg-color);
+    padding: 20px;
+    height: auto;
+    border-top: 1px solid rgb(6, 6, 54);
+    z-index: 100;
+    transition: background-color 0.3s, color 0.3s;
+}
 .theme-toggle {
     position: fixed;
-    bottom: 20px;
+    bottom: 0;
     right: 20px;
     font-size: 24px;
-    padding: 20px;
+    padding: 6px;
     background: none;
     border: none;
     color: var(--text-color);
@@ -65,14 +81,36 @@ header li {
     transition: color 0.3s;
   }
 
+/* About Me page styling */
+
+/* Resume page styling */
+
+/* My Projects page styling */
+
+.projects {
+    display: block;
+    margin: auto;
+    padding: 50px;
+    padding-top: 10;
+    text-align: center;
+}
+.projects .hover-word:hover {
+    color: var(--text-hover-color);
+    transition: color 0.5s;
+}
+
 /* Contact page styling */
 
-.contact-page {
+.contact-content {
+    display: block;
     padding-top: 0;
     max-width: 600px;
+    padding: 50px;
     margin: auto;
+    text-align: center;
 }
-.contact-page h1 {
+.contact-content h1 {
+    display: inline;
     font-size: 35px;
     margin-bottom: 20px;
 }
