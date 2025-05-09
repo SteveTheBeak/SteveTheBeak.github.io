@@ -6,6 +6,7 @@
     --text-hover-color: rgb(72, 61, 139);
     --nav-bg-color: rgb(200,200,200);
     --hero-bg-color: rgb(230, 235, 240);
+    --spotlight-bg-color: rgb(220,220,255);
 }
 html.dark-mode {
     --bg-color: rgb(18,18,18);
@@ -13,6 +14,7 @@ html.dark-mode {
     --text-hover-color: rgb(100, 149, 237);
     --nav-bg-color: rgb(40,40,40);
     --hero-bg-color: rgb(30, 35, 40);
+    --spotlight-bg-color: rgb(50,50,100);
 }
 
 /* Home page / defualt styling */
@@ -25,7 +27,6 @@ body {
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
 }
-
 header {
     background-color: var(--bg-color);
     padding: 20px;
@@ -43,6 +44,10 @@ header a {
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
 }
+header a:hover {
+    color: rgb(30, 144, 255);
+    transition: color 0.3s;
+}
 section {
     background: var(--bg-color);
     color: var(--text-color);
@@ -51,33 +56,109 @@ section {
     flex-direction: row;
     transition: background-color 0.3s, color 0.3s;
 }
-.hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 60px 20px;
-    background: var(--hero-bg-color);
+.info-box {
+    background-color: var(--hero-bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin: 20px auto 0;
+    width: 100%;
+    transition: background-color 0.3s;
 }
-.hero h2 {
+.info-box:hover {
+    background-color: var(--spotlight-bg-color);
+    transition: background-color 0.3s;
+}
+h2 {
+    display: inline-block;
     font-size: 30px;
-    margin-bottom: 10px;
+    margin: 10px;
+    text-align: left;
+    transition: font-size 0.3s;
 }
-.hero p {
-    font-size: 17px;
-    max-width: 600px;
-    margin-bottom: 10px;
-}
-ul {
+
+/* Navigation bar */
+
+nav ul {
     margin: 0;
     padding: 0;
     text-align: right;
     list-style-type: none;
 }
-header li {
+nav li {
     display: inline-block;
     margin-right: 20px;
 }
+
+/* Hero section */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px 50px;
+    margin-bottom: 20px;
+    background: var(--hero-bg-color);
+}
+.hero h2 {
+    font-family: sans-serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.hero p {
+    font-size: 17px;
+    max-width: 700px;
+    margin-bottom: 10px;
+}
+
+/* Summary section */
+
+.summary {
+    padding: 20px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Project Spotlight section */
+
+.spotlight {
+    padding: 20px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+.info-box:hover h2 {
+    font-size: 35px;
+    transition: font-size 0.3s;
+}
+.info-img {
+    border-radius: 8px;
+    float: right;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+.pop-text {
+    opacity: 0;
+    margin: 10px;
+    max-width: 350px;
+    text-align: left;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.pop-text a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--text-color);
+}
+.info-box:hover .pop-text {
+    opacity: 1;
+    transform: translateY(0);
+    color: var(--text-color);
+  }
+
+/* Footer */
+
 .footer {
     position: fixed;
     bottom: 0;
