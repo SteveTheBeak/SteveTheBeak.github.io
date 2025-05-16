@@ -13,7 +13,7 @@ html.dark-mode {
     --text-color: white;
     --text-hover-color: rgb(100, 149, 237);
     --nav-bg-color: rgb(40,40,40);
-    --hero-bg-color: rgb(30, 35, 40);
+    --hero-bg-color: rgb(20, 25, 30);
     --spotlight-bg-color: rgb(50,50,100);
 }
 
@@ -155,7 +155,19 @@ nav li {
     opacity: 1;
     transform: translateY(0);
     color: var(--text-color);
-  }
+}
+
+/* Contact section */
+
+.contact {
+    padding: 20px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.last-item {
+    margin-bottom: 65px;
+}
 
 /* Footer */
 
