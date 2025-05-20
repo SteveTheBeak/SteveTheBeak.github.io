@@ -7,6 +7,7 @@
     --nav-bg-color: rgb(200,200,200);
     --hero-bg-color: rgb(230, 235, 240);
     --spotlight-bg-color: rgb(220,220,255);
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 html.dark-mode {
     --bg-color: rgb(18,18,18);
@@ -15,9 +16,10 @@ html.dark-mode {
     --nav-bg-color: rgb(40,40,40);
     --hero-bg-color: rgb(20, 25, 30);
     --spotlight-bg-color: rgb(50,50,100);
+    --shadow-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Home page / defualt styling */
+/*---------------- Home page / defualt styling ----------------*/
 
 body {
     background: var(--bg-color);
@@ -35,7 +37,6 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     position: sticky;
     z-index: 100;
-
 }
 header a {
     color: var(--text-color);
@@ -77,7 +78,7 @@ h2 {
     transition: font-size 0.3s;
 }
 
-/* Navigation bar */
+/*---------------- Navigation bar ----------------*/
 
 nav ul {
     margin: 0;
@@ -90,7 +91,35 @@ nav li {
     margin-right: 20px;
 }
 
-/* Hero section */
+/*---------------- Footer ----------------*/
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-bg-color);
+    padding: 20px;
+    height: auto;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
+    z-index: 100;
+    transition: background-color 0.3s, color 0.3s;
+}
+.theme-toggle {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    font-size: 24px;
+    padding: 6px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 1000;
+    transition: color 0.3s;
+  }
+
+/*---------------- Hero section ----------------*/
 
 .hero {
     display: flex;
@@ -112,7 +141,7 @@ nav li {
     margin-bottom: 10px;
 }
 
-/* Summary section */
+/*---------------- Summary section ----------------*/
 
 .summary {
     padding: 20px 20px;
@@ -120,7 +149,7 @@ nav li {
     margin: auto;
 }
 
-/* Project Spotlight section */
+/*---------------- Project Spotlight section ----------------*/
 
 .spotlight {
     padding: 20px 20px;
@@ -157,7 +186,7 @@ nav li {
     color: var(--text-color);
 }
 
-/* Contact section */
+/*---------------- Contact section ----------------*/
 
 .contact {
     padding: 20px 20px;
@@ -169,39 +198,11 @@ nav li {
     margin-bottom: 65px;
 }
 
-/* Footer */
+/*---------------- About Me page styling ----------------*/
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--nav-bg-color);
-    padding: 20px;
-    height: auto;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
-    z-index: 100;
-    transition: background-color 0.3s, color 0.3s;
-}
-.theme-toggle {
-    position: fixed;
-    bottom: 0;
-    right: 20px;
-    font-size: 24px;
-    padding: 6px;
-    background: none;
-    border: none;
-    color: var(--text-color);
-    cursor: pointer;
-    z-index: 1000;
-    transition: color 0.3s;
-  }
+/*---------------- Resume page styling ----------------*/
 
-/* About Me page styling */
-
-/* Resume page styling */
-
-/* My Projects page styling */
+/*---------------- My Projects page styling ----------------*/
 
 .projects {
     display: block;
@@ -210,12 +211,81 @@ nav li {
     padding-top: 10;
     text-align: center;
 }
-.projects .hover-word:hover {
-    color: var(--text-hover-color);
+.projects .hover-word {
     transition: color 0.5s;
 }
+.projects .hover-word:hover {
+    color: var(--text-hover-color);
+    color: rgb(72, 61, 139);
+    transition: color 0.5s;
+}
+.projects h1 {
+    font-size: 24px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+.projects .container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 20px;
+    align-items: flex-start;
+}
+.box {
+    flex: 1;
+    min-width: 0;
+    height: auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px var(--shadow-color);
+    text-align: justify;
+    background-color: transparent;
+    transition: background-color 0.3s, flex 0.5s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+.box:hover {
+    background-color: var(--hero-bg-color);
+    transition: background-color 0.3s;
+}
+.box h3 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+.box-hidden {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.box.shrink {
+    flex: 0.333333;
+}
+.box.active {
+    flex: 3;
+}
+.box.active .box-hidden {
+    max-height: max-content;
+    padding-top: 20px;
+}
+.box video {
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+.img-showcase {
+    border-radius: 8px;
+    float: right;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+.box.active .img-showcase, .box.shrink .img-showcase {
+    display: none;
+}
 
-/* Contact page styling */
+/*---------------- Contact page styling ----------------*/
 
 .contact-content {
     display: block;
