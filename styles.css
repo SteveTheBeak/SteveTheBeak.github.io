@@ -232,8 +232,7 @@ nav li {
     align-items: flex-start;
 }
 .box {
-    flex: 1;
-    min-width: 0;
+    flex: 1;  
     height: auto;
     padding: 30px;
     border-radius: 8px;
@@ -249,8 +248,17 @@ nav li {
     transition: background-color 0.3s;
 }
 .box h3 {
+    font-size: 20px;
     margin: 0;
     margin-bottom: 20px;
+    padding: 20px;
+    padding-left: 0;
+    transition: font-size 0.3s ease;
+}
+.box p {
+    max-width: 170px;
+    text-align: left;
+    line-height: 20px;
 }
 .box-hidden {
     display: flex;
@@ -259,12 +267,26 @@ nav li {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
+    clear: both;
 }
 .box.shrink {
-    flex: 0.333333;
+    flex: 0;
+    min-width: 35px;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    padding-left: 15px;
+    padding-bottom: 10px;
 }
 .box.active {
-    flex: 3;
+    flex: 1;
+}
+.box.shrink::before {
+    content: "↓";
+    display: inline-block;
+    font-size: 40px;
 }
 .box.active .box-hidden {
     max-height: max-content;
@@ -273,6 +295,7 @@ nav li {
 .box video {
     border-radius: 16px;
     transition: transform 0.3s ease;
+    float: right;
 }
 .img-showcase {
     border-radius: 8px;
@@ -281,7 +304,13 @@ nav li {
     height: 300px;
     object-fit: cover;
 }
-.box.active .img-showcase, .box.shrink .img-showcase {
+.box.active h3 {
+    font-size: 24px;
+}
+.box.shrink .box {
+    max-height: 20px;
+}
+.box.active .img-showcase, .box.shrink .img-showcase, .box.active p, .box.shrink p, .box.shrink h3{
     display: none;
 }
 
