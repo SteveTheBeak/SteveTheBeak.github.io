@@ -348,11 +348,11 @@ nav li {
     header {
         padding-right: 0;
     }
+    header a {
+        font-size: 50px;
+    }
     h2 {
         font-size: 40px;
-    }
-    nav ul {
-        text-align: center;
     }
     .box p {
         display: block;
