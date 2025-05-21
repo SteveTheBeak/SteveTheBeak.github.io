@@ -341,3 +341,20 @@ nav li {
     font-size: 35px;
     margin-bottom: 20px;
 }
+
+/*---------------- Device responsiveness styling ----------------*/
+
+@media screen and (max-width: 500px) {
+    header {
+        padding-right: 0;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    nav ul {
+        text-align: center;
+    }
+    .box p {
+        display: block;
+    }
+}
