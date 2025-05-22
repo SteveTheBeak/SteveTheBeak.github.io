@@ -55,11 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!isActive) {
                 clickedBox.classList.add("active");
 
-                container.querySelectorAll(".box").forEach(box => {
-                    if (box !== clickedBox) {
-                        box.classList.add("shrink");
-                    }
-                });
+                if (window.innerWidth > 850) {
+                    container.querySelectorAll(".box").forEach(box => {
+                        if (box !== clickedBox) {
+                            box.classList.add("shrink");
+                        }
+                    });
+                }
 
                 const video = clickedBox.querySelector("video");
                 if (video) video.play();

@@ -308,6 +308,7 @@ nav li {
     border-radius: 16px;
     transition: transform 0.3s ease;
     float: right;
+    max-width: 400px;
 }
 .img-showcase {
     border-radius: 8px;
@@ -342,9 +343,11 @@ nav li {
     margin-bottom: 20px;
 }
 
-/*---------------- Device responsiveness styling ----------------*/
+/*-------------------------- Device responsiveness styling --------------------------*/
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
+    /*-------- Home page / defualt styling --------*/
+
     header {
         padding-right: 0;
     }
@@ -352,25 +355,18 @@ nav li {
         font-size: 18px;
         word-spacing: 2px;
     }
-    h2 {
-        text-align: center;
-        font-size: 40px;
-    }
     .info-box {
         display: flex;
         flex-direction: column;
         padding: 10;
     }
-    .info-img {
-        display: block;
-        margin: 0 auto;
+    h2 {
+        text-align: center;
+        font-size: 30px;
     }
-    .box p {
-        flex-direction: column;
-        font-size: 14px;
-        padding: 10px;
-        display: block;
-    }
+
+    /*-------- Navigation bar --------*/
+
     nav ul {
         text-align: center;
         word-spacing: 10px;
@@ -378,10 +374,59 @@ nav li {
     nav li {
         margin-right: 8px;
     }
+
+    /*-------- Project Spotlight section --------*/
+
+    .info-img {
+        display: block;
+        margin: 0 auto;
+    }
     .pop-text {
         text-align: center;
         margin: 20px auto 0;
         padding: 0;
         max-width: 100%;
+    }
+}
+@media screen and (max-width: 850px) {
+    /*---------------- My Projects page styling ----------------*/
+
+    .projects .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+    .box p {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        padding: 10px;
+    }
+    .img-showcase {
+        display: block;
+        margin: 0 auto;
+        float: none;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+    .box-hidden {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .box video {
+        float: none;
+        display: block;
+        margin: 10px auto;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
     }
 }
