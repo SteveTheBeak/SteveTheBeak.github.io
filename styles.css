@@ -352,7 +352,7 @@ nav li {
         padding-right: 0;
     }
     header a {
-        font-size: 18px;
+        font-size: 22px;
         word-spacing: 2px;
     }
     .info-box {
@@ -369,7 +369,8 @@ nav li {
 
     nav ul {
         text-align: center;
-        word-spacing: 10px;
+        word-spacing: 25px;
+        line-height: 35px;
     }
     nav li {
         margin-right: 8px;
