@@ -24,6 +24,19 @@
             </nav>
         </header>
 
+        <!------------------- Projects navigation section ------------------->
+
+        <nav class="project-nav">
+            <ul>
+                <li><a href="#flappy-bird">Flappy Bird</a></li>
+                <li><a href="#rollercoaster">Rollercoaster</a></li>
+                <li><a href="#mini-mac">Mini mac</a></li>
+                <li><a href="#water-filter">Water filter</a></li>
+                <li><a href="#178-car">3D printed car</a></li>
+                <li><a href="#hackathon-bot">Hackathon bot</a></li>
+            </ul>
+        </nav>
+
         <!------------------- Software section ------------------->
         <section class="projects">
             <h1>
@@ -54,9 +67,9 @@
             <!-- Software row 2 -->
             <div class="container">
                 <!-- box 1 -->
-                <div class="box">
+                <div class="box" id="flappy-bird">
                    <h3>Flappy Bird</h3>
-                   <img class="img-showcase" src="../images/flappyBird/flappyBirdFront.png"/>
+                   <img class="img-showcase" src="../images/flappyBird/flappyBirdFront.png" alt="Flappy bird game"/>
 
                     <div class="box-hidden">
                     Hidden text
@@ -85,9 +98,9 @@
             <!-- CAD row 1 -->
             <div class="container">
                 <!-- box 1 -->
-                <div class="box">
+                <div class="box" id="rollercoaster">
                     <h3>Rollercoaster</h3>
-                    <img class="img-showcase" src="../images/rollercoaster/rollercoasterFront.png"/>
+                    <img class="img-showcase" src="../images/rollercoaster/rollercoasterFront.png" alt="3D printed marble rollercoaster"/>
                     <p>
                         Rollercoaster description
                     </p>
@@ -120,9 +133,9 @@
             <!-- Mechatronics row 1 -->
             <div class="container">
                 <!-- box 1 -->
-                <div class="box">
+                <div class="box" id="mini-mac">
                     <h3>Mini Mac</h3>
-                    <img class="img-showcase" src="../images/miniMac/miniMacFront.jpg"/>
+                    <img class="img-showcase" src="../images/miniMac/miniMacFront.jpg" alt="3D printed mini mac"/>
                     <p>
                         Mini mac description
                     </p>
@@ -133,9 +146,9 @@
                 </div>
 
                 <!-- box 2 -->
-                <div class="box">
+                <div class="box" id="water-filter">
                     <h3>Water filter</h3>
-                    <img class="img-showcase" src="../images/waterFilter/waterFilterFront.png"/>
+                    <img class="img-showcase" src="../images/waterFilter/waterFilterFront.png" alt="Arduino-controlled water filter"/>
                     <p>
                         Water filter description
                     </p>
@@ -151,22 +164,27 @@
             <!-- Mechatronics row 2 -->
             <div class="container">
                 <!-- box 1 -->
-                <div class="box">
+                <div class="box" id="178-car">
                     <h3>3D Printed Car</h3>
-                    <img class="img-showcase" src="../images/178Project/178CarFull.jpg"/>
+                    <img class="img-showcase" src="../images/178Project/178CarFull.jpg" alt="The Li-Car - a 3D printed car with a 360 degree radar" title="The Li-Car   ¯\_(ツ)_/¯"/>
                     <p>
                         3D printed car description
                     </p>
 
                     <div class="box-hidden">
                         Hidden text for 3d printed car
+                        <br>
+                        <div class="video-column">
+                            <video src="../videos/178CarMotor.mp4" controls loop muted width="300"></video>
+                            <video src="../videos/178CarRadar.mp4" controls loop muted width="300"></video>
+                        </div>
                     </div>
                 </div>
 
                 <!-- box 2 -->
-                    <div class="box">
+                    <div class="box" id="hackathon-bot">
                     <h3>Hackathon Bot</h3>
-                    <img class="img-showcase" src="../images/hackathonBot/hackathonBotFront.jpg"/>
+                    <img class="img-showcase" src="../images/hackathonBot/hackathonBotFront.jpg" alt="Hackathon mini bot" title="Meet Anxiety"/>
                     <p>
                         Hackathon bot description
                     </p>

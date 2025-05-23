@@ -63,8 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                 }
 
-                const video = clickedBox.querySelector("video");
-                if (video) video.play();
+                const videos = clickedBox.querySelectorAll("video");
+                videos.forEach(video => {
+                    video.currentTime = 0;
+                    video.play();
+                });
             }
         });
     });
