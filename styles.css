@@ -431,8 +431,12 @@ header nav li {
     /*-------- Navigation bar --------*/
 
     nav ul {
-        text-align: center;
-        word-spacing: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
         line-height: 35px;
     }
     nav li {
