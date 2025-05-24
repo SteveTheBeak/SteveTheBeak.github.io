@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     </head>
     <body>
-        <header>
+        <header id="header">
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -27,14 +27,32 @@
         <!------------------- Projects navigation section ------------------->
 
         <nav class="project-nav">
-            <ul>
-                <li><a href="#flappy-bird">Flappy Bird</a></li>
-                <li><a href="#rollercoaster">Rollercoaster</a></li>
-                <li><a href="#mini-mac">Mini mac</a></li>
-                <li><a href="#water-filter">Water filter</a></li>
-                <li><a href="#178-car">3D printed car</a></li>
-                <li><a href="#hackathon-bot">Hackathon bot</a></li>
-            </ul>
+            <div class="columns">
+                <div> <!-- Software column -->
+                    <h2>Software Projects</h2>
+                    <ul>
+                        <li><a href="#flappy-bird">Flappy Bird</a></li>
+                    </ul>
+                </div>
+                            
+                            
+                <div> <!-- CAD column -->
+                    <h2>CAD Designs</h2>
+                    <ul>
+                        <li><a href="#rollercoaster">Rollercoaster</a></li>
+                    </ul>
+                </div>
+
+                <div> <!-- Mechatronics column-->
+                    <h2>Mechatronics Projects</h2>
+                    <ul>
+                        <li><a href="#mini-mac">Mini mac</a></li>
+                        <li><a href="#water-filter">Water filter</a></li>
+                        <li><a href="#178-car">3D printed car</a></li>
+                        <li><a href="#hackathon-bot">Hackathon bot</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
 
         <!------------------- Software section ------------------->
@@ -177,6 +195,7 @@
                         <div class="video-column">
                             <video src="../videos/178CarMotor.mp4" controls loop muted width="300"></video>
                             <video src="../videos/178CarRadar.mp4" controls loop muted width="300"></video>
+                            <video src="../videos/178CarSteer.mp4" controls loop muted width="300"></video>
                         </div>
                     </div>
                 </div>
@@ -202,6 +221,15 @@
                 <i class="fas fa-moon"></i>
             </button>
             <script src="/script.js" defer></script>
+
+            <button class="scroll" aria-label="Scroll to the top" title="Scroll to the top">
+                <i>🡅</i>
+            </button>
+            <script>
+                document.querySelector('.scroll').addEventListener('click', function () {
+                    document.getElementById('header').scrollIntoView({ behavior: 'smooth' });
+                });
+            </script>
         </div>
     </body>
 </html>

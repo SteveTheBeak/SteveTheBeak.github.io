@@ -120,6 +120,7 @@ header nav li {
     transition: background-color 0.3s, color 0.3s;
 }
 .theme-toggle {
+    display: inline-block;
     position: fixed;
     bottom: 0;
     right: 20px;
@@ -130,8 +131,29 @@ header nav li {
     color: var(--text-color);
     cursor: pointer;
     z-index: 1000;
-    transition: color 0.3s;
-  }
+    transition: color 0.3s, transform 0.3s ease;
+    }
+.theme-toggle:hover {
+    transform: scale(1.2);
+}
+.scroll {
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    right: 70px;
+    font-size: 35px;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    transform-origin: center;
+    z-index: 1000;
+    transition: color 0.3s, transform 0.3s ease;
+}
+.scroll:hover {
+    transform: scale(1.2);
+}
 
 /*---------------- Hero section ----------------*/
 
@@ -222,17 +244,35 @@ header nav li {
 
 .project-nav ul {
     margin: 0;
-    padding: 30px 30px 0 80px;
-    text-align: left;
+    padding: 10px;
+    list-style-type: none;
+    text-align: center;
 }
 .project-nav li {
     margin-bottom: 20px;
 }
 .project-nav a {
     color: var(--heading-color);
-    text-decoration: underline;
+    text-decoration: none;
     margin-top: 80px;
     transition: background-color 0.3s, color 0.3s;
+}
+.project-nav a:hover {
+    text-decoration: underline;
+}
+.project-nav h2 {
+    text-decoration: underline;
+    color: var(--hero-text-color);
+}
+.project-nav .columns {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 80px 0 80px;
+    gap: 40px;
+}
+.project-nav .columns div {
+    flex: 1;
+    text-align: center;
 }
 .projects {
     display: block;
