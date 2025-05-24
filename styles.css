@@ -261,6 +261,7 @@ header nav li {
     text-decoration: underline;
 }
 .project-nav h2 {
+    text-align: center;
     text-decoration: underline;
     color: var(--hero-text-color);
 }
@@ -437,10 +438,11 @@ header nav li {
         align-items: center;
         justify-content: center;
         gap: 20px;
-        line-height: 35px;
+        line-height: 20px;
     }
     nav li {
         margin-right: 8px;
+        line-height: 20px;
     }
 
     /*-------- Project Spotlight section --------*/
@@ -459,6 +461,20 @@ header nav li {
 @media screen and (max-width: 850px) {
     /*---------------- My Projects page styling ----------------*/
 
+    .project-nav ul {
+        flex-direction: column;
+        gap: 20px;
+        line-height: 30px;
+    }
+    .project-nav li {
+        margin-bottom: 0;
+    }
+    .project-nav h2 {
+        font-size: 20px;
+    }
+    .project-nav .columns {
+        padding: 15px 20px 0 20px;
+    }
     .projects .container {
         flex-direction: column;
         align-items: center;
