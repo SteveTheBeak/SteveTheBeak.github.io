@@ -1,10 +1,6 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
 
 /* Theme colours */
 
@@ -39,6 +35,10 @@ html.dark-mode {
 
 /*---------------- Home page / defualt styling ----------------*/
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -275,6 +275,7 @@ header nav li {
 }
 .project-nav .columns {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 30px 80px 0 80px;
     gap: 40px;
@@ -430,7 +431,7 @@ header nav li {
     .info-box {
         display: flex;
         flex-direction: column;
-        padding: 10;
+        padding: 10px;
     }
     h2 {
         text-align: center;
@@ -471,8 +472,9 @@ header nav li {
 
     .project-nav ul {
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
         line-height: 30px;
+        text-align: center;
     }
     .project-nav li {
         margin-bottom: 0;
@@ -482,6 +484,7 @@ header nav li {
     }
     .project-nav .columns {
         padding: 15px 20px 0 20px;
+        align-items: center;
     }
     .projects .container {
         flex-direction: column;
@@ -520,5 +523,10 @@ header nav li {
         width: 100%;
         max-width: 300px;
         height: auto;
+    }
+}
+@media screen and (max-width: 850px) {
+    .project-nav h2 {
+        font-size: 15px;
     }
 }
