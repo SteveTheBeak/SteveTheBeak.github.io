@@ -186,6 +186,31 @@ header nav li {
     max-width: 700px;
     margin-bottom: 10px;
 }
+.info-tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.info-tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+    .info-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
 
 /*---------------- Summary section ----------------*/
 
@@ -327,13 +352,37 @@ header nav li {
     background-color: var(--box-hover-color);
     transition: background-color 0.3s;
 }
-.box h3 {
-    font-size: 20px;
-    margin: 0;
+.box p::after {
+    content: "\A\A Click to expand";
+    white-space: pre; 
+    font-style: italic;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.box:hover p::after {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+.box-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
-    padding: 20px;
-    padding-left: 0;
+}
+.box-header h3, .box-header h4 {
+    margin: 0;
+    padding: 0;
     transition: font-size 0.3s ease;
+}
+.box-header h4 {
+     opacity: 0;
+     transition: opacity 0.3s ease;
+}
+.box:hover h4 {
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 .box p {
     max-width: 170px;
@@ -350,15 +399,12 @@ header nav li {
     clear: both;
 }
 .box.shrink {
-    flex: 0;
-    min-width: 35px;
-    min-height: 40px;
-    align-items: center;
+    flex: 0 0 50px;
+    max-height: 50px;
+    align-items: flex-start;
     justify-content: center;
     padding: 0;
     margin: 0;
-    padding-left: 15px;
-    padding-bottom: 10px;
 }
 .box.active {
     flex: 1;
@@ -367,6 +413,8 @@ header nav li {
     content: "↓";
     display: inline-block;
     font-size: 40px;
+    width: 100%;
+    text-align: center;
 }
 .box.active .box-hidden {
     max-height: max-content;
@@ -396,7 +444,7 @@ header nav li {
 .box.shrink .box {
     max-height: 20px;
 }
-.box.active .img-showcase, .box.shrink .img-showcase, .box.active p, .box.shrink p, .box.shrink h3{
+.box.active .img-showcase, .box.shrink .img-showcase, .box.active p, .box.shrink p, .box.shrink h3, .box.shrink h4{
     display: none;
 }
 
