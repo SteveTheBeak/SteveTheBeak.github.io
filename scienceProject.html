@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Astronomy Game</title>
+        <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            width: 100%;
+            height: 260px;
+            position: relative;
+            background-color: white;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        .label, .rulesText, #labelEnd {
+            font-size: 14px;
+            padding: 10px;
+            text-align: center;
+            color: blue;
+        }
+        .rulesText {
+            color: black;
+            font-size: 12px;
+            height: 220px;
+            overflow-y: auto;
+            position: absolute;
+            top: 0;
+            margin: 0;
+        }
+        #q1 {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            font-size: 12px;
+            color: red;
+        }
+        #questionText {
+            font-size: 12px;
+            color: red;
+            padding: 10px;
+            height: 100px;
+            text-align: center;
+            padding-top: 70px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+        #answerText {
+            font-size: 12px;
+            color: blue;
+            text-align: center;
+            margin-top: 5px;
+        }
+        #inputBox {
+            display: block;
+            margin: 5px auto;
+            width: 80%;
+            height: 25px;
+        }
+        .button {
+            width: 100px;
+            height: 30px;
+            font-size: 12px;
+            color: red;
+            background-color: #00ff00;
+            border: none;
+            margin: 4px auto;
+            display: block;
+            cursor: pointer;
+        }
+        .button.btnStart {
+            margin-top: 50px;
+        }
+        #labelEnd {
+            white-space: pre-wrap;
+            color: blue;
+            font-size: 14px;
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="label1" class="label">You are playing my astronomy game. Press the button to read the rules:</div>
+            <div id="q1"></div>
+            <div id="questionText"></div>
+            <input type="text" id="inputBox" style="display:none;" autocomplete="off"/>
+            <div id="rulesText" class="rulesText" style="display: none;">
+                You will be asked 40 questions, and you have to answer as many questions as you can. 
+                The more questions you guess correctly, the more points you get. 
+                When you complete all the questions, your score will be shown on the screen. 
+                If you do not know a question, type something in and click next question. 
+                Compete with your friends to see who knows more about our universe. 
+
+                Your answer's have to be very precise, or they will not count.
+                You do not have to enter capitals, symbols, or any other meaningless words, such as 'light years' or 'kilometres'.
+                (words such as 'billion' are important if needed)
+                You are NOT allowed to cheat by looking up the answers on the internet or in your notes.
+                Good luck!
+                <button id="btnStart" class="button btnStart" style="display:none;">Start game</button>
+            </div>
+            <div id="labelEnd" style="display: none;"></div>
+            <div id="answerText"></div>
+
+            <button id="btnRules" class="button">Rules</button>
+            <button id="btnNext" class="button" style="display:none;">Next question</button>
+            <button id="btnRestart" class="button" style="display:none;">Restart</button>
+            <button id="btnEnd" class="button" style="display:none;">End</button>
+            <button id="btnReadRules" class="button" style="display:none;">READ RULES</button>
+        </div>
+
+        <script>
+            const questions = [
+                "What is the 6th planet from our sun?",
+                "What year was the Hubble telescope launched in?",
+                "What was the name of the first dog in space?",
+                "What is the name of the galaxy closest to ours?",
+                "What is the name of the black hole in the center of our galaxy?",
+                "Multiple choice:\nAbout how far away from Earth is Pluto in kilometres?\na) 3 billion   b) 4.6 billion   c) 5 billion   d) 2 billion",
+                "Multiple choice:\nAbout how old is Venus?\na) 6 billion years   b) 5 billion years   c) 2.7 billion years   d) 8.3 billion years",
+                "Multiple choice:\nAbout how long does it take for light to travel from the sun to Pluto?\na) 5 hours   b) 36 minutes   c) 6 hours   d) 15 hours",
+                "What type of galaxy is the Milky Way?",
+                "Multiple choice:\nHow many Earth days and hours is a day on venus?\na) 24 days, 3 hours   b) 136 days, 18 hours   c) 98 days, 1 hour   d) 116 days, 8 hours",
+                "How many moons does Neptune have?",
+                "How many moons does Uranus have?",
+                "Who was the first woman in space? (first and last name)",
+                "Multiple choice:\nHow big is the black hole in the center of our galaxy in kilometres?\na) 20.4 million   b) 3.25 million   c) 23.6 million   d) 37.8 million",
+                "Multiple choice:\nHow many monkeys have been to space?\na) 21   b) 56   c) 31   d) 32   e) 35",
+                "Multiple choice:\nHow many moons does Venus and Mercury have combined?\na) 0   b) 1   c) 2   d) 3   e) 4",
+                "What is Jupiters largest moon called?",
+                "What is the darkest planet in the solar system?",
+                "Multiple choice:\nWhat is the gravity level on jupiter?\na) 42.65 m/s^2   b) 24.79 m/s^2   c) 23.79 m/s^2   d) 19.258 m/s^2   e) 37.6 m/s^2",
+                "What is the temperature on Venus during the day in celcius?",
+                "What is the temperature on Venus during the night in celcius?",
+                "How many moons does Pluto have?",
+                "What star is the closest to us?",
+                "Multiple choice:\nHow far away is the closest star to us in light years?\na) 5.3   b) 45   c) 89.5   d) 24.2   e) 4.3",
+                "What type of galaxy is the most common in our universe?",
+                "Which place is the coldest in the universe?",
+                "The hottest place in the universe is located in which constellation?",
+                "Multiple choice:\nHow old is the universe in years?\na) 12.5 billion   b) 13.8 billion   c) 14 billion   d) 23.6 billion   e) 894.8 million",
+                "What is the most common type of star found in the Milky Way?",
+                "What is the largest type of star in the universe?",
+                "What is the longest continuous time a human has spent in space? (days)",
+                "How many minutes was the shortest space flight?",
+                "What is the largest crater on Earth s moon?",
+                "What year was Pluto reclassified from a planet to a dwarf planet?",
+                "How many pounds would a person weigh on Mars if they weigh 200 pounds on Earth?",
+                "Which planet is closest to the sun?",
+                "Which planet is known as the Morning Star or the Evening Star?",
+                "Which planet can float on water due to its density?",
+                "Are black holes hot or cold on the outside?",
+                "How many U.S flags are on the moon?"
+            ];
+            const answers = [
+                "saturn",
+                "1990",
+                "laika",
+                "andromeda",
+                "sagittarius a",
+                "c",
+                "b",
+                "a",
+                "spiral",
+                "d",
+                "14",
+                "27",
+                "valentina tereshkova",
+                "c",
+                "b",
+                "a",
+                "ganymede",
+                "neptune",
+                "b",
+                "460",
+                "460",
+                "5",
+                "proxima centauri",
+                "e",
+                "elliptical",
+                "boomerang nebula",
+                "virgo",
+                "b",
+                "red dwarf",
+                "red supergiant",
+                "437",
+                "15",
+                "south pole-aitken basin",
+                "2006",
+                "76",
+                "mercury",
+                "venus",
+                "saturn",
+                "hot",
+                "6"
+            ];
+
+            let questionNumber = 0;
+            let score = 0;
+
+            const label1 = document.getElementById("label1");
+            const rulesText = document.getElementById("rulesText");
+            const labelEnd = document.getElementById("labelEnd");
+            const q1 = document.getElementById("q1");
+            const questionText = document.getElementById("questionText");
+            const inputBox = document.getElementById("inputBox");
+            const answerText = document.getElementById("answerText");
+
+            const btnRules = document.getElementById("btnRules");
+            const btnStart = document.getElementById("btnStart");
+            const btnNext = document.getElementById("btnNext");
+            const btnRestart = document.getElementById("btnRestart");
+            const btnEnd = document.getElementById("btnEnd");
+            const btnReadRules = document.getElementById("btnReadRules");
+
+            btnRules.onclick = () => {
+                label1.style.display = "none";
+                btnRules.style.display = "none";
+                rulesText.style.display = "block";
+                btnStart.style.display = "block";
+            };
+
+            btnStart.onclick = startGame;
+            btnNext.onclick = checkAnswer;
+            btnRestart.onclick = clearGame;
+            btnEnd.onclick = finishGame;
+            btnReadRules.onclick = showRules;
+
+            function startGame() {
+                rulesText.style.display = "none";
+                btnStart.style.display = "none";
+                btnNext.style.display = "block";
+                btnEnd.style.display = "block";
+                btnReadRules.style.display = "block";
+                inputBox.style.display = "block";
+                q1.style.display = "block";
+                questionText.style.display = "block";
+                answerText.style.display = "none";
+                askQuestion();
+            }
+
+            function askQuestion() {
+                if (questionNumber < questions.length) {
+                    questionText.textContent = questions[questionNumber].replace("*", "\n");
+                    q1.textContent = "Question " + (questionNumber + 1);
+                    answerText.style.display = "none";
+                } else {
+                    finishGame();
+                }
+            }
+
+            function checkAnswer() {
+                const userAnswer = inputBox.value.trim().toLowerCase();
+                if (userAnswer) {
+                    if (userAnswer === answers[questionNumber].toLowerCase()) {
+                        score++;
+                    }
+                    answerText.textContent = "The correct answer is: " + answers[questionNumber];
+                    answerText.style.display = "block";
+                    inputBox.value = "";
+                    questionNumber++;
+                    setTimeout(askQuestion, 2000);
+                }
+
+            }
+
+            function finishGame() {
+                btnNext.style.display = "none";
+                inputBox.style.display = "none";
+                questionText.style.display = "none";
+                q1.style.display = "none";
+                answerText.style.display = "none";
+                btnEnd.style.display = "none";
+                btnReadRules.style.display = "none";
+                labelEnd.innerText = "You have successfully finished the quiz!\n\n\nYour score is:\n" + score;
+                labelEnd.style.display = "block";
+                btnRestart.style.display = "block";
+            }
+
+            function clearGame() {
+                questionNumber = 0;
+                score = 0;
+                labelEnd.style.display = "none";
+                btnRestart.style.display = "none";
+                startGame();
+            }
+
+            function showRules() {
+                labelEnd.style.display = "none";
+                inputBox.style.display = "none";
+                questionText.style.display = "none";
+                q1.style.display = "none";
+                btnNext.style.display = "none";
+                btnEnd.style.display = "none";
+                btnReadRules.style.display = "none";
+                rulesText.style.display = "block";
+                btnStart.style.display = "block";
+            }
+        </script>
+    </body>
+</html>

@@ -398,6 +398,15 @@ header nav li {
     transition: max-height 0.3s ease, padding 0.3s ease;
     clear: both;
 }
+.box-hidden iframe {
+    display: block;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 500px;
+    height: 260px;
+    background: transparent;
+}
 .box.shrink {
     flex: 0 0 50px;
     max-height: 50px;
@@ -518,6 +527,9 @@ header nav li {
 @media screen and (max-width: 850px) {
     /*---------------- My Projects page styling ----------------*/
 
+    .project-nav h2 {
+        font-size: 15px;
+    }
     .project-nav ul {
         flex-direction: column;
         gap: 10px;
@@ -541,15 +553,25 @@ header nav li {
     .box {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        padding: 20px;
         width: 100%;
-        text-align: center;
+        text-align: left;
+    }
+    .box-header h3 {
+        text-align: left;
+        flex: 1;
+    }
+    .box-header h4 {
+        text-align: right;
+        flex: 1;
     }
     .box p {
         display: flex;
         flex-direction: column;
+        max-width: 100%;
         font-size: 14px;
-        padding: 10px;
+        padding: 0 4px;
     }
     .img-showcase {
         display: block;
@@ -564,6 +586,13 @@ header nav li {
         align-items: center;
         text-align: center;
     }
+    .box-hidden iframe {
+        width: 100%;
+        max-width: 300px;
+        height: 200px;
+        display: block;
+        margin: 0 auto;
+    }
     .box video {
         float: none;
         display: block;
@@ -571,10 +600,5 @@ header nav li {
         width: 100%;
         max-width: 300px;
         height: auto;
-    }
-}
-@media screen and (max-width: 850px) {
-    .project-nav h2 {
-        font-size: 15px;
     }
 }
