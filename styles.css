@@ -8,9 +8,9 @@
     /* text colours */
     --text-color: rgb(16, 16, 16);
     --header-hover-color: rgb(72, 61, 139); /* Project page header hover colour */
-    --text-hover-color: rgb(98, 102, 231); /* Project page small text hover colour */
     --heading-color: rgb(34, 9, 98);
     --hero-text-color: rgb(35, 2, 2);
+    --link-color: rgb(0, 102, 204);
     /* background colours */
     --bg-color: rgb(242, 242, 247);
     --nav-bg-color: rgb(200,200,200);
@@ -23,9 +23,9 @@ html.dark-mode {
     /* text colours */
     --text-color: rgb(236, 208, 221);
     --header-hover-color: rgb(100, 149, 237);
-    --text-hover-color: rgb(30, 144, 255);
     --heading-color: rgb(193, 203, 248);
     --hero-text-color: rgb(244, 202, 202);
+    --link-color: rgb(135, 206, 250);
     /* background colours */
     --bg-color: rgb(18,18,18);
     --nav-bg-color: rgb(40,40,40);
@@ -326,8 +326,13 @@ header nav li {
     transition: color 0.5s;
 }
 .hover-word.small:hover {
-    color: var(--text-hover-color);
+    color: rgb(255,107,107);
     transition: color 0.5s;
+}
+.highlight {
+    color: rgb(23, 162, 184);
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 .projects h1 {
     font-size: 24px;
@@ -373,6 +378,16 @@ header nav li {
 .box:hover .box-description::after {
     opacity: 0;
 }
+.box-description a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, opacity 0.2s ease;
+}
+.box-description a:hover {
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
 .box-header {
     display: flex;
     flex-direction: row;
@@ -401,6 +416,7 @@ header nav li {
 .box-hidden { /* Collapsed box hidden content */
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     justify-content: space-between;
     max-height: 0;
     overflow: hidden;
@@ -432,7 +448,9 @@ header nav li {
 .box.active .box-description { /* Opened box description */
     display: block;
     max-width: 100%;
-    margin: 0 40px 20px 0;
+    margin: 0 40px 0 0;
+    text-align: left;
+    line-height: 1.4;
 }
 .box.shrink::before {
     content: "↓";
@@ -576,7 +594,7 @@ header nav li {
         align-items: stretch;
         padding: 20px;
         width: 100%;
-        text-align: left;
+        text-align: center;
     }
     .box-header h3 {
         text-align: left;
@@ -592,6 +610,12 @@ header nav li {
         max-width: 100%;
         font-size: 14px;
         padding: 0 4px;
+        text-align: center;
+    }
+
+    .box.active .box-description {
+        text-align: left;
+        margin: 0 auto;
     }
     .img-showcase {
         display: block;
