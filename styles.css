@@ -325,9 +325,29 @@ header nav li {
     color: var(--header-hover-color);
     transition: color 0.5s;
 }
-.hover-word.small:hover {
-    color: rgb(255,107,107);
+.hover-word.small {
+    color: rgb(255, 139, 139);
+    position: relative;
+}
+.hover-word.small:hover, .hover-word.small:active {
+    color: rgb(255, 40, 40);
     transition: color 0.5s;
+}
+.touch-tooltip {
+    position: absolute;
+    left: 50%;
+    top: 120%;
+    width: 200px;
+    transform: translateX(-50%);
+    background: #222;
+    color: #fff;
+    padding: 6px 12px;
+    margin: 0;
+    font-size: 13px;
+    white-space: pre-line;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.95;
 }
 .highlight {
     color: rgb(23, 162, 184);

@@ -72,10 +72,32 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    //Stop box from closing when clicking on a video frame
-    document.querySelectorAll(".box video").forEach(video => {
+    //Stop box from closing when clicking on a video frame or hover words
+    document.querySelectorAll(".box video, .hover-word.small").forEach(video => {
         video.addEventListener("click", event => {
             event.stopPropagation();
+        });
+    });
+
+    //Show text on tap for touch screen devices
+    document.querySelectorAll('.hover-word.small').forEach(word => {
+        word.addEventListener('click', function(e) {
+            // Prevent double tooltips
+            let existing = word.querySelector('.touch-tooltip');
+            if (existing) {
+                existing.remove();
+                return;
+            }
+            // Create tooltip
+            const tooltip = document.createElement('span');
+            tooltip.className = 'touch-tooltip';
+            tooltip.textContent = word.getAttribute('title');
+            word.appendChild(tooltip);
+
+            // Remove tooltip after 3 seconds or on next tap
+            setTimeout(() => {
+                tooltip.remove();
+            }, 3000);
         });
     });
 });

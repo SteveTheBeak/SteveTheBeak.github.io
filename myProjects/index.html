@@ -123,7 +123,7 @@
                             The multiplayer was a twist on the game, where two people could play simultaneously and the player 
                             to last the longest was the winner.
                             <br><br>
-                            If you want to try the game out yourself, you can <a href="https://github.com/SteveTheBeak/AstronomyGame" target="_blank" rel="noopener noreferrer">download the game files here</a> 
+                            If you want to try the game out yourself, you can <a href="https://github.com/SteveTheBeak/AstronomyGame" target="_blank" rel="noopener noreferrer">find the game files here</a> 
                             and run it off a <span class="hover-word small" title="Visual Studio Code should work best if you have it">Java IDE</span>.
                         </p>
                         <br>
@@ -155,12 +155,26 @@
                             <span class="highlight">hardware</span> <span class="hover-word small" title="We used the ItsyBitsy microcontroller">components</span>. 
                             We learned how to use different sensors, such as <em>distance sensors</em>, <em>colour sensors</em>, and <em>controlling servo motors</em> 
                             for the wheels and bucket system.<br>
-                            The final project was
+                            The final project was putting everything we learned together - this included line following, turning on 
+                            intersections, and picking up / dropping items using the bucket and arm system.
                             <br><br>
-                            ...
+                            Although the tasks seemed simple at first, there were many challenges that required unique solutions 
+                            to make the code function correctly. The main problems were <em>traction</em>, <em>battery life</em>, and using <em>open loop code</em>. 
+                            The first and simplest fix: the traction, which went wrong when the wheels became dirty and started slipping on the ground. 
+                            As the wheels became more slippery, the code needed to be <span class="hover-word small" title="Typicaly for the turns, as it would over or under-steer">slightly adjusted</span> 
+                            very often to counteract this, so we cleaned the wheels with a <span class="hover-word small" title="Yes, it works well">toothbrush</span>.<br>
+                            The <em>LiPo</em> batteries were hard to work with, since even if a good battery was used, it would be depleted very quickly. The more they 
+                            were used, the less power they gave to the <span class="hover-word small" title="Mainly the servo motors">motors and sensors</span>, 
+                            which slowed down the bot and changed the timings. Since we were using specific timings for turns, the battery needed to always be charged to 
+                            be consistent.<br>
+                            This leads into the next problem, which is using an open loop system - this is where everything the bot does 
+                            is based on delays without any feedback from any sensors. Clearly, the solution would be to code in a closed loop system, 
+                            where the bots actions are determined based on <span class="hover-word small" title="For example, the bot stops when the range sensor detects a specific distance from an obstacle">sensor readings and feeback</span>. 
+                            The challenge with this is that we did not have many options for sensors, so we would need to create complex algorithms for some simple actions. 
+                            We found a good balance for using open and closed loop code, and only used open loop for turns at intersections.                
                             <br><br>
                             As part of the final submission, each group was required to record a short video of the entire run. If 
-                            you want to watch my groups submission, <a href="../videos/Group16ProjectLoaderVideo.mp4" target="_blank" rel="noopener noreferrer">click this link</a> 
+                            you want to watch my groups submission, <a href="../videos/Group16ProjectLoaderVideo.mp4" target="_blank" rel="noopener noreferrer">click this link</a>, 
                             turn up the volume and enjoy! (feat. AI Sir David Attenborough)
                         </p>
                         <br>
