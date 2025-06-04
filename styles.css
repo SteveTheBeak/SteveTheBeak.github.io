@@ -475,7 +475,7 @@ header nav li {
 .box.shrink::before {
     content: "↓";
     display: inline-block;
-    font-size: 40px;
+    font-size: 36px;
     width: 100%;
     text-align: center;
 }
@@ -500,6 +500,11 @@ header nav li {
     width: 300px;
     height: 300px;
     object-fit: cover;
+}
+.img-description {
+    margin: 20px 30px 20px 0;
+    width: 150px;
+    height: auto;
 }
 .box.active h3 {
     font-size: 24px;
