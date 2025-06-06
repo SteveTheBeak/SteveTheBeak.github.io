@@ -483,13 +483,13 @@ header nav li {
     max-height: max-content;
     padding-top: 20px;
 }
-.box video {
+.box video, .img-hidden {
     border-radius: 16px;
     transition: transform 0.3s ease;
     float: right;
     max-width: 400px;
 }
-.video-column {
+.sidebar-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
