@@ -94,10 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
             tooltip.textContent = word.getAttribute('title');
             word.appendChild(tooltip);
 
-            // Remove tooltip after 3 seconds or on next tap
+            // Remove tooltip after 5 seconds or on next tap
             setTimeout(() => {
                 tooltip.remove();
-            }, 3000);
+            }, 5000);
         });
     });
 });

@@ -92,7 +92,9 @@
                             and download the files to try it out yourself.
                         </p>
                         <br>
-                        <iframe src="../scienceProject.html" width="500" height="260" style="border:none;"></iframe>
+                        <div class="sidebar-column">  
+                            <iframe src="../scienceProject.html" width="500" height="260" style="border:none;"></iframe>
+                        </div>
                     </div>
                 </div>
 
@@ -127,7 +129,9 @@
                             and run it in a <span class="hover-word small" title="Visual Studio Code should work best if you have it">Java IDE</span>.
                         </p>
                         <br>
-                        <video src="../videos/flappyBirdVideo.mp4" controls loop muted width="500"></video>
+                        <div class="sidebar-column">  
+                            <video src="../videos/flappyBirdVideo.mp4" controls loop muted width="500"></video>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -238,7 +242,9 @@
                             Each section, including many other parts, was 3D printed and connected using custom clips to create the full marble run.
                         </p>    
                         <br>
-                        <video src="../videos/rollercoasterVideo.mp4" controls loop muted width="300"></video>
+                        <div class="sidebar-column">  
+                            <video src="../videos/rollercoasterVideo.mp4" controls loop muted width="300"></video>
+                        </div>
                     </div>
                 </div>
 
@@ -304,7 +310,13 @@
                     </p>
 
                     <div class="box-hidden">
-                        Hidden text for mini mac
+                        <p class="box-description">
+
+                        </p>
+                        <br>
+                        <div class="sidebar-column">
+
+                        </div>
                     </div>
                 </div>
 
@@ -322,10 +334,42 @@
 
                     <div class="box-hidden">
                         <p class="box-description">
-                            This project was designed as an introduction to learning the engineering process. 
+                            This project was designed as an introduction to the engineering process. Each team held weekly 
+                            meetings to <em>determine and analyze data</em>, <em>create designs</em>, and <em>document progress</em> through 
+                            reports. It taught teamwork/collaboration and problem solving — skills that are needed for creating a functional 
+                            prototype within a specific time frame.
+                            <br><br>
+                            The purpose of the project was to create a working prototype of a water filter. Using centrifugal and peristaltic pumps to move 
+                            the water, <span class="hover-word small" title="Turbidity is the measure of how many particles are found in water — a higher turbidity means the water is dirtier">turbidity</span> 
+                            <span class="hover-word small" title="A turbidity sensor measures the amount of particles in water and outputs it as a voltage reading">sensors</span> to measure the water clarity, 
+                            and a variety of other <span class="hover-word small"title="We also used a motor, servo, 3D printed parts and other materials to put everything together with">sensors and devices</span>, 
+                            the filter uses aluminum sulfate (alum) powder to clump soil and dirt found in the water together, which is then transferred through a syringe packed with layers of 
+                            <span class="hover-word small" title="Like fine sand, or a sponge">filtering materials</span> that blocks any remaining particles, leaving only <span class="hover-word small" title="I still wouldn't recommend drinking it though">
+                            clear, filtered water</span>.
+                            <br><br>
+                            To begin the project, we were given a hypothetical scenario in which a community needed a drinking water system. We were given multiple options,                           
+                            each having its own advantages and drawbacks, and we needed to choose the most appropriate one based on specific criteria. 
+                            After figuring out all the logistics and constraints, we began designing the main water filter system. While all the necessary materials were provided, 
+                            many parts still had to be designed and implemented by our team. For example, we had to calculate <em>motor torque</em>, design a <em>powder dispensing system</em>, 
+                            assemble all the parts into a <em>functional prototype</em>, and write code for the entire system to filter the water properly.<br>
+                            The team used <strong>SOLIDWORKS</strong> to create <span class="highlight">CAD models</span> and <strong>Arduino software</strong> to write <span class="highlight">code</span> for the electronics. 
+                            After many tests and improvements, the final prototype filter worked correctly. 
                         </p>
                         <br>
-                        <video src="../videos/waterFilterVideo.mp4" controls loop muted width="500"></video>
+                        <div class="sidebar-column">   
+                            <video src="../videos/waterFilterVideo.mp4" controls loop muted width="500"></video>
+                            <h3>How the filter works:</h3>
+                            <ul class="box-description" style="list-style-type: none; padding: 0">
+                                <li>The button is pressed <i class="fas fa-arrow-right"></i></li>
+                                <li>The centrifugal pump transfers dirty water to the coagulation chamber <i class="fas fa-arrow-right"></i></li>
+                                <li>The mixing assembly begins spinning the mixing bar using a 6V DC motor, the dispensing mechanism releases 0.8 grams of alum powder, and turbidity values are recorded from the sensors in 
+                                the container <i class="fas fa-arrow-right"></i></li>
+                                <li>Once the turbidity values are less than or equal to the minimum requirement, the mixing assembly is turned off <i class="fas fa-arrow-right"></i></li>
+                                <li>The peristaltic pump transfers the filtered water through the syringe and into the third container, and the second turbidity sensor begins taking readings <i class="fas fa-arrow-right"></i></li>
+                                <li>The water level is measured with the liquid level sensor <i class="fas fa-arrow-right"></i> the peristaltic pump stops when it reaches the highest water level <i class="fas fa-arrow-right"></i></li>
+                                <li>now the water is successfully filtered!</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

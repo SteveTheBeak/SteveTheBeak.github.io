@@ -337,7 +337,8 @@ header nav li {
     position: absolute;
     left: 50%;
     top: 120%;
-    width: 200px;
+    max-width: 200px;
+    min-width: 120px;
     transform: translateX(-50%);
     background: #222;
     color: #fff;
@@ -345,12 +346,13 @@ header nav li {
     margin: 0;
     font-size: 13px;
     white-space: pre-line;
+    word-break: break-word;
     z-index: 100;
     pointer-events: none;
     opacity: 0.95;
 }
 .highlight {
-    color: rgb(23, 162, 184);
+    color: rgb(255, 123, 0);
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -489,10 +491,15 @@ header nav li {
     float: right;
     max-width: 400px;
 }
-.sidebar-column {
+.sidebar-column { /* Making sure the images on the side of description text in boxes are styled properly */
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.sidebar-column h3 {
+    margin: 20px 0 0;
+    color: var(--hero-text-color);
+    transition: color 0.3s ease;
 }
 .img-showcase {
     border-radius: 8px;
@@ -591,7 +598,17 @@ header nav li {
     /*---------------- My Projects page styling ----------------*/
 
     .project-nav h2 {
-        font-size: 15px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        padding-top: 0;
+        line-height: 1.1;
+        min-height: 40px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
     }
     .project-nav ul {
         flex-direction: column;
@@ -602,12 +619,21 @@ header nav li {
     .project-nav li {
         margin-bottom: 0;
     }
-    .project-nav h2 {
-        font-size: 20px;
-    }
     .project-nav .columns {
-        padding: 15px 20px 0 20px;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+        justify-content: center;
+    }
+    .project-nav .columns div {
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: flex-start;
+        min-height: 80px;
+        padding-top: 0;
+        margin-top: 0;
+        flex: 1;
     }
     .projects .container {
         flex-direction: column;
