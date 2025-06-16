@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    //Stop box from closing when clicking on a video frame or hover words
-    document.querySelectorAll(".box video, .hover-word.small").forEach(video => {
+    //Stop box from closing when clicking on a video frame, hover words, or zoom images
+    document.querySelectorAll(".box video, .hover-word.small, .img-description.zoom").forEach(video => {
         video.addEventListener("click", event => {
             event.stopPropagation();
         });

@@ -335,7 +335,7 @@ header nav li {
 }
 .touch-tooltip {
     position: absolute;
-    left: 50%;
+    left: 100%;
     top: 120%;
     max-width: 200px;
     min-width: 120px;
@@ -512,6 +512,14 @@ header nav li {
     margin: 20px 30px 20px 0;
     width: 150px;
     height: auto;
+}
+.img-description.zoom {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.img-description.zoom:active {
+    transform: scale(2);
+    float: right;
 }
 .box.active h3 {
     font-size: 24px;

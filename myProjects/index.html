@@ -159,7 +159,7 @@
                             <span class="highlight">hardware</span> <span class="hover-word small" title="We used the ItsyBitsy microcontroller">components</span>. 
                             We learned how to use different sensors, such as <em>distance sensors</em> and <em>colour sensors</em>, as well as how to <em>control servo motors</em> 
                             for the wheels and bucket system.<br>
-                            The final project was putting everything we learned together - this included line following, turning on 
+                            The final project was putting everything we learned together — this included line following, turning on 
                             intersections, and picking up/dropping items using the bucket and arm system.
                             <br><br>
                             Although the tasks seemed simple at first, there were many challenges that required unique solutions 
@@ -171,7 +171,7 @@
                             were used, the less power they gave to the <span class="hover-word small" title="Mainly the servo motors">motors and sensors</span>, 
                             which slowed down the bot and changed the timings. Since we were using specific timings for turns, the battery always needed to be fully charged to 
                             be consistent.<br>
-                            This leads into the next problem, which is using an open-loop system - This is where everything the bot does 
+                            This leads into the next problem, which is using an open-loop system — This is where everything the bot does 
                             is based on delays without any feedback from any sensors. Clearly, the solution would be to code in a closed-loop system, 
                             where the bots actions are determined based on <span class="hover-word small" title="For example, the bot stops when the range sensor detects a specific distance from an obstacle">sensor readings and feedback</span>. 
                             The challenge with this is that we did not have many sensor options, so we would need to create complex algorithms for some simple actions. 
@@ -229,7 +229,7 @@
                         <p class="box-description">
                             By the time I began designing the track, I had been learning and practicing with <span class="highlight">CAD</span>, 
                             using software like <strong>OnShape</strong> to create simple models. When the rollercoaster project was assigned, I decided to 
-                            3D print the track - unlike other groups who built theirs manually - to both practice and develop more CAD skills.<br>
+                            3D print the track — unlike other groups who built theirs manually — to both practice and develop more CAD skills.<br>
                             While creating different designs, I encountered problems like the track being <span class="hover-word small" title="The rails would split apart, causing the ball to fall through">too weak</span> or  
                             the rail spacing being <span class="hover-word small" title="Causing either too much friction or making the ball fly off">too wide or too narrow</span>. 
                             After many iterations, the different track parts were measured to have the right balance of strength and stability for the ball. 
@@ -304,7 +304,7 @@
                     </div>
                     <img class="img-showcase" src="../images/miniMac/miniMacFront.jpg" alt="3D printed mini mac"/>
                     <p>
-                        The final project for my grade 12 Computer Engineering class - a small 3D printed mini mac 
+                        The final project for my grade 12 Computer Engineering class — a small 3D printed mini mac 
                         computer with an LED matrix screen that displays different images for each click. It also includeds
                         a keyboard with lights (and even plays music). 
                     </p>
@@ -366,8 +366,9 @@
                                 the container <i class="fas fa-arrow-right"></i></li>
                                 <li>Once the turbidity values are less than or equal to the minimum requirement, the mixing assembly is turned off <i class="fas fa-arrow-right"></i></li>
                                 <li>The peristaltic pump transfers the filtered water through the syringe and into the third container, and the second turbidity sensor begins taking readings <i class="fas fa-arrow-right"></i></li>
-                                <li>The water level is measured with the liquid level sensor <i class="fas fa-arrow-right"></i> the peristaltic pump stops when it reaches the highest water level <i class="fas fa-arrow-right"></i></li>
-                                <li>now the water is successfully filtered!</li>
+                                <li>The water level is measured with the liquid level sensor <i class="fas fa-arrow-right"></i></li>
+                                <li>The peristaltic pump stops when it reaches the highest water level <i class="fas fa-arrow-right"></i></li>
+                                <li>Now the water is successfully filtered!</li>
                             </ul>
                         </div>
                     </div>
@@ -382,7 +383,7 @@
                         <h3>3D Printed Car</h3>
                         <h4><em>March, 2025</em></h4>
                     </div>
-                    <img class="img-showcase" src="../images/178Project/178CarFull.jpg" alt="The Li-Car - a 3D printed car with a 360 degree radar" title="The Li-Car   ¯\_(ツ)_/¯"/>
+                    <img class="img-showcase" src="../images/178Project/178CarFull.jpg" alt="The Li-Car — a 3D printed car with a 360 degree radar"/>
                     <p>
                         As the final project for my data structures and algorithms course in first year, 
                         my group designed and coded a working 3D printed car with a 360 degree radar, featuring 
@@ -390,12 +391,35 @@
                     </p>
 
                     <div class="box-hidden">
-                        Hidden text for 3d printed car
+                        <p class="box-description">
+                            The idea for a functional 3D printed car model first came from inspiration from the way real cars work. At first, I found a 3D model 
+                            of a differential gear system (<a href="https://www.thingiverse.com/thing:11836" target="_blank">click here</a> to view the 3D model on Thingiverse), and designed a frame 
+                            with the differential system implemented in it. After making some adjustments, I added a <em>motor</em> with a gear reduction to power the differential system with more torque, 
+                            and <em>wheels</em> to the custom axles.
+                            <br><br>
+                            Now, even though the car was able to drive, it needed a steering system. To continue making the car as realistic as possible, 
+                            I designed a steering system that works very similarly to one found in real cars. A <em>180-degree servo motor</em> was used to power the steering — the servo  
+                            is connected to a rack and pinion, which transfers rotational to linear motion. The rack is then connected to rods called arms, with ball joints (tie rods) for full range of motion. 
+                            The arms are then connected to the front wheels, allowing them to rotate and turn. To view the inspiration for this design, <a href="https://www.youtube.com/watch?v=em1O8mz7sF0&t=2m54s" target="_blank">click here</a> 
+                            to view the YouTube video describing how car steering works.<br>
+                            Finally, after all the designs were finalized, they were assembled on a frame, creating a working drive system for the car.
+                            <br><br>
+                            <img class="img-description zoom" src="../images/178Project/178CarBelly.jpg" alt="Underside of 3D printed car model" style="width: 400px" title="Press and hold to enlarge">
+                            <br><br>
+                            After designing the main car, we needed to somehow implement a radar with a 360-degree turning radius. We only had 180-degree servo motors, 
+                            so I designed a 2:1 gear ratio that allowed the <strong>ultrasonic sensor</strong> to rotate in every direction.<br>
+                            For the electronics, I used an <span class="hover-word small" title="An H-bridge is used to reverse the polarity of an applied voltage, such as in a DC motor">H-bridge motor driver</span> 
+                            to allow reverse driving, and a <span class="hover-word small" title="A transistor controls the flow of current — useful for a car using a DC motor">transistor</span> for speed control. 
+                            Along with steering, a servo motor was used to rotate the ultrasonic sensor, all of which were controlled by an <strong>Arduino UNO</strong> microcontroller.
+                            <br><br>
+                            After the project was finished, I wanted to improve the design — I added a motor driver to supply more current to the motor, powered by a larger battery setup. I also tried adding more 
+                            motors to the drive system, but too much friction was a major issue. Even with many other possible improvements, this project gave me the opportunity to 
+                            practice and develop my <strong>CAD</strong> and <strong>electronics</strong> skills.
                         <br>
                         <div class="sidebar-column">
                             <video src="../videos/178CarMotor.mp4" controls loop muted width="300"></video>
-                            <video src="../videos/178CarRadar.mp4" controls loop muted width="300"></video>
                             <video src="../videos/178CarSteer.mp4" controls loop muted width="300"></video>
+                            <video src="../videos/178CarRadar.mp4" controls loop muted width="300"></video>
                         </div>
                     </div>
                 </div>
