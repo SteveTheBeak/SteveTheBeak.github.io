@@ -102,6 +102,17 @@ h2 {
     transition: font-size 0.3s;
 }
 
+.link {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, opacity 0.2s ease;
+}
+.link:hover {
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
 /*---------------- Navigation bar ----------------*/
 
 header nav ul {
