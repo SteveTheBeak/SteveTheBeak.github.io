@@ -1,15 +1,62 @@
 /*---------------- Contact page styling ----------------*/
 
-.contact-content {
+
+.heading, .contact-content {
     display: block;
     padding-top: 0;
-    max-width: 600px;
-    padding: 50px;
+    padding: 50px 50px 20px;
     margin: auto;
     text-align: center;
 }
-.contact-content h1 {
+.contact-content {
+    padding-top: 0;
+}
+.heading h1 {
     display: inline;
     font-size: 35px;
     margin-bottom: 20px;
+    color: var(--hero-text-color);
+    transition: color 0.3s;
+}
+.contact-content h2 {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--hero-text-color);
+    transition: color 0.3s;
+}
+.contact-content h3 {
+    display: inline;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+.contact-content ul {
+    margin: 0;
+    padding: 10px;
+    list-style-type: none;
+    text-align: center;
+}
+.contact-content li {
+    margin-bottom: 20px;
+}
+.contact-content .text-copy li:last-child {
+    position: relative;
+    padding-bottom: 40px;
+}
+.contact-content .text-copy li:last-child::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60vw;
+    height: 1.5px;
+    background: var(--text-color);
+}
+.contact-content a {
+    text-decoration: none;
+    color: var(--text-color);
 }

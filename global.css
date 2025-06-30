@@ -101,7 +101,6 @@ h2 {
     text-align: left;
     transition: font-size 0.3s;
 }
-
 .link {
     color: var(--link-color);
     text-decoration: none;
@@ -111,6 +110,35 @@ h2 {
 .link:hover {
     opacity: 0.6;
     transition: opacity 0.2s ease;
+}
+.text-copy {
+  position: relative;
+  display: inline-block;
+}
+.contact-text {
+    position: relative;
+    transition: color 0.3s ease;
+}
+.contact-text:hover  {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+.copy-confirm {
+  display: none;
+  position: absolute;
+  top: -33px;
+  left: 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+.contact-text.copied .copy-confirm {
+  display: block;
 }
 
 /*---------------- Navigation bar ----------------*/

@@ -101,3 +101,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// Function to copy text to clipboard
+function copy(element, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    element.classList.add("copied");
+
+    setTimeout(() => {
+          element.classList.remove("copied");
+    }, 2000);
+    
+  }).catch(err => {
+    console.error("Failed to copy: ", err);
+  });
+}
+
